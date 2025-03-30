@@ -1,0 +1,23 @@
+Skipping Rice: Rice_subcrop_data.csv not found
+Skipping Maize: Maize_subcrop_data.csv not found
+Skipping Bengal Gram (Gram)(Whole): Bengal Gram (Gram)(Whole)_subcrop_data.csv not found
+Skipping Pegeon Pea (Arhar Fali): Pegeon Pea (Arhar Fali)_subcrop_data.csv not found
+Skipping Moath Dal: Moath Dal_subcrop_data.csv not found
+Skipping Green Gram (Moong)(Whole): Green Gram (Moong)(Whole)_subcrop_data.csv not found
+Skipping Black Gram (Urd Beans)(Whole): Black Gram (Urd Beans)(Whole)_subcrop_data.csv not found
+Skipping Lentil (Masur)(Whole): Lentil (Masur)(Whole)_subcrop_data.csv not found
+Skipping Pomegranate: Pomegranate_subcrop_data.csv not found
+Skipping Banana: Banana_subcrop_data.csv not found
+Skipping Mango: Mango_subcrop_data.csv not found
+Skipping Grapes: Grapes_subcrop_data.csv not found
+Skipping Water Melon: Water Melon_subcrop_data.csv not found
+Skipping Karbuja (Musk Melon): Karbuja (Musk Melon)_subcrop_data.csv not found
+Skipping Apple: Apple_subcrop_data.csv not found
+Skipping Orange: Orange_subcrop_data.csv not found
+Skipping Papaya: Papaya_subcrop_data.csv not found
+Skipping Coconut: Coconut_subcrop_data.csv not found
+Skipping Cotton: Cotton_subcrop_data.csv not found
+Skipping Jute: Jute_subcrop_data.csv not found
+Skipping Coffee: Coffee_subcrop_data.csv not found
+
+Accuracy: 0.00% (Correct: 0/0)
