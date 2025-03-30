@@ -28,7 +28,11 @@ const Home = () => {
   
     if (!fetchWeather) {
       if (!temp || !humidity || !rainfall) {
+<<<<<<< HEAD
         setError("Please enter Temperature, Humidity, and Rainfall manually.");
+=======
+        setError("Please enter Temperature, Humidity, and Rainfall manually .");
+>>>>>>> 4c3e4e4 (second commit)
         return;
       }
     } else {
