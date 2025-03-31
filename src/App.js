@@ -132,7 +132,7 @@ const Home = () => {
                 <p>Rainfall: {weatherData.rain ? weatherData.rain["1h"] : 0} mm</p>
               </>
             ) : (
-              <p>Loading weather data...</p>
+              <p>Loading weather data... fetching</p>
             )}
           </div>
         ) : (
