@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import ResultPage from "./ResultPage"; // Import the result page
 import "./App.css"; 
-
+import Auth from "./Auth";
 const Home = () => {
   const [nitrogen, setNitrogen] = useState("");
   const [potassium, setPotassium] = useState("");
@@ -154,17 +154,25 @@ const Home = () => {
 
         {error && <p className="error">{error}</p>}
 
-        <button onClick={handlePredict}>Get Prediction</button>
+        <button 
+        className="w-full bg-green-500 text-white py-3 rounded-md font-semibold hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300 flex items-center justify-center gap-2"
+        onClick={handlePredict}>Get Prediction</button>
       </div>
     </div>
   );
 };
 
+
+
+
+
+
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Auth />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/result" element={<ResultPage />} />
       </Routes>
     </Router>

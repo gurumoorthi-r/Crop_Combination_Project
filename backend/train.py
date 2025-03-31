@@ -37,7 +37,7 @@ crop_name_mapping = {
 
 # SubCropRecommender Class
 class SubCropRecommender:
-    def __init__(self, main_model_path='main_crop_model.pkl', subcrop_dir='/sub_crop_data'):
+    def __init__(self, main_model_path='main_crop_model.pkl', subcrop_dir='sub_crop_data'):
         self.main_model = self.load_main_crop_model(main_model_path)
         self.subcrop_dir = subcrop_dir
         self.crop_name_mapping = crop_name_mapping
@@ -106,14 +106,21 @@ class SubCropRecommender:
             sub_crop_features = sub_crop_df[['N', 'P', 'K', 'temperature', 'rainfall', 'ph', 'humidity']].values
             
             distances = euclidean_distances(input_vector, sub_crop_features)[0]
-            sub_crops_with_distances = list(zip(sub_crop_df['sub-crop'], distances))
-            sorted_sub_crops = sorted(sub_crops_with_distances, key=lambda x: x[1])[:num_recommendations]
-            recommended_sub_crops = [{"sub_crop": crop, "distance": float(dist)} for crop, dist in sorted_sub_crops]
+            sub_crops_with_distances = sorted(zip(sub_crop_df['sub-crop'], distances), key=lambda x: x[1])
+            
+            unique_sub_crops = []
+            seen_sub_crops = set()
+            for crop, dist in sub_crops_with_distances:
+                if crop not in seen_sub_crops:
+                    unique_sub_crops.append({"sub_crop": crop, "distance": float(dist)})
+                    seen_sub_crops.add(crop)
+                if len(unique_sub_crops) == num_recommendations:
+                    break
             
             return {
                 "main_crop": main_crop,
                 "main_confidence": main_confidence,
-                "sub_crops": recommended_sub_crops,
+                "sub_crops": unique_sub_crops,
                 "warnings": warnings if warnings else None
             }
         except Exception as e:
@@ -164,7 +171,7 @@ class SubCropRecommender:
 # Save the Model as a .pkl File
 def save_subcrop_model(filename='subcrop_recommender.pkl'):
     recommender = SubCropRecommender(main_model_path='main_crop_model.pkl', 
-                                     subcrop_dir='/sub_crop_data/')
+                                     subcrop_dir='sub_crop_data')
     with open(filename, 'wb') as file:
         pickle.dump(recommender, file)
     print(f"Sub-crop recommender model saved as '{filename}'")

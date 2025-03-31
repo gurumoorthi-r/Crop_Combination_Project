@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f8f0;
@@ -42,16 +46,7 @@ input {
   border-radius: 5px;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #388e3c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-}
+
 
 button:hover {
   background-color: #66bb6a;
